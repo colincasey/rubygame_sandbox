@@ -1,5 +1,7 @@
-require "./game/bootstrap.rb"
-Game::Bootstrap.new.execute
+module Game
+end
+require "./game/core/log.rb"
+
 
 puts "Checking for test cases:"
 Dir["./test/**/*_test.rb"].each do |testcase|

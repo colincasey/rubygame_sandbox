@@ -6,8 +6,9 @@ module Game::Core
   
   class Log
   
+    @@log = Logger.new 'rubygame sandbox'
+    
     def self.configure
-      @@log = Logger.new 'rubygame sandbox'
       self.add_console_out
       self.add_file_out
       @@log.level = DEBUG
@@ -38,7 +39,7 @@ module Game::Core
     
     def self.add_file_out
       file_format = PatternFormatter.new(:pattern => "[ %d ] %l\t %m")
-      log_file = './game.log'
+      log_file = '../game.log'
       @@log.add FileOutputter.new('fileOutputter', :filename => log_file, :trunc => false, :formatter=>file_format)
     end
     

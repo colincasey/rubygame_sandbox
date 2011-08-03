@@ -34,11 +34,15 @@ module Game::Core
       parent_collision_node = CollisionNode.new Rect.new(0, 0, 640, 480), 5
       collision_tree = CollisionTree.new parent_collision_node
       
+      resource_dir = "./../Resource"
+      Surface.autoload_dirs << File.join(resource_dir, "img")  
+      Sound.autoload_dirs   << File.join(resource_dir, "sfx")
+      Music.autoload_dirs   << File.join(resource_dir, "music")
+      
       sm = SceneManager.new screen, clock, entity_factory, collision_tree
       
       #test objects
       sm.add "Fox", 100, 100
-      #sm.add "Planet", 300, 300
       
       return sm
     end

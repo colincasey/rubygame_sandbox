@@ -8,7 +8,8 @@ module Game
   class Main
    
     def initialize
-      Bootstrap.new.execute
+      require "./game/core/log.rb"
+      Game::Core::Log.configure
       @scene_manager = SceneManagerFactory.create
     end
   
