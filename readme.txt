@@ -1,3 +1,5 @@
+README
+
 install ruby 1.9.2p180
 
 install ruby game: https://github.com/rubygame/rubygame/wiki/Install
