@@ -1,11 +1,36 @@
+def actor(properties)
+  
+  
+  act =  properties[properties.keys[0]]
+  
+  act[:sprite_sheet].each do |k,v|
+    puts k
+  end
 
-  sprite_sheet = {
-    name: "walk", 
-    path: "./resource/img/pic_walk.png",
-    frames: [4,4],
-    time: [5, 20, 5, 20],
-    animation: { up: 1, right: 2, down: 3, left: 4 }
-  }
+end
 
 
-puts sprite_sheet
+class ScriptManager
+  
+  attr_reader :actors
+  
+  def initialize
+    @actors = Hash.new
+  end
+  
+  def def_actor(properties)
+    actors[properties.keys[0].to_s] = properties[properties.keys[0]]
+  end
+  
+end
+
+sm = ScriptManager.new
+
+sm.instance_eval File.open("script.rb").read
+puts sm.actors["fox"]
+
+
+  
+
+
+

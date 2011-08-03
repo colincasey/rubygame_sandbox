@@ -6,6 +6,11 @@ require "./game/core/collision_node.rb"
 require "./game/core/collision_tree.rb"
 require "./game/entities/fox.rb"
 
+include Rubygame
+include Rubygame::Events
+include Rubygame::EventActions
+include Rubygame::EventTriggers
+
 module Game::Core
   
   class SceneManagerFactory
