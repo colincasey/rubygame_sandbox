@@ -2,7 +2,7 @@
 module Game::Core
   
   class PlayerInput
-    include EventHandler::HasEventHandler
+    include Rubygame::EventHandler::HasEventHandler
     
     def initialize
       @queue = EventQueue.new

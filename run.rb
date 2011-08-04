@@ -1,3 +1,3 @@
-require "./game/main.rb"
-Game::Main.new().run
+require File.dirname(__FILE__) + "/game/main"
+Game::Main.new.run
 

@@ -1,10 +1,9 @@
-require "rubygame"
-require "./game/core/entity_factory.rb"
-require "./game/core/collision_tree.rb"
-require "./game/core/scene_manager.rb"
-require "./game/core/collision_node.rb"
-require "./game/core/collision_tree.rb"
-require "./game/entities/fox.rb"
+require "game/core/entity_factory"
+require "game/core/collision_tree"
+require "game/core/scene_manager"
+require "game/core/collision_node"
+require "game/core/collision_tree"
+require "game/entities/fox"
 
 include Rubygame
 include Rubygame::Events
