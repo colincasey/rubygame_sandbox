@@ -1,7 +1,3 @@
-require "rubygame"
-include Rubygame
-
-
 module Game::Core
 
   class SpriteSheet

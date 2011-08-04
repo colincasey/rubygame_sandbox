@@ -60,19 +60,19 @@ module Game::Core
     def create_child_nodes
       child_depth = @depth - 1
       
-      arect = Rect.new self.x, self.y, self.width / 2, self.height / 2
+      arect = Rubygame::Rect.new self.x, self.y, self.width / 2, self.height / 2
       a = CollisionNode.new arect, child_depth
       @child_nodes << a       
              
-       brect = Rect.new a.right, self.y, self.right - a.right, a.height
+       brect = Rubygame::Rect.new a.right, self.y, self.right - a.right, a.height
        b = CollisionNode.new brect, child_depth
        @child_nodes << b
                 
-       drect = Rect.new self.x, a.bottom, a.width, (self.bottom - self.top) / 2
+       drect = Rubygame::Rect.new self.x, a.bottom, a.width, (self.bottom - self.top) / 2
        d = CollisionNode.new drect, child_depth
        @child_nodes << d
                 
-       crect = Rect.new b.x, d.y, b.width, d.height
+       crect = Rubygame::Rect.new b.x, d.y, b.width, d.height
        c = CollisionNode.new crect, child_depth         
        @child_nodes << c
     end

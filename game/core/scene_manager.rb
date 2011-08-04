@@ -1,4 +1,4 @@
-require "./game/core/script_manager.rb"
+require "game/core/script_manager"
 
 module Game::Core
   

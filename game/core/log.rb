@@ -1,48 +1,47 @@
-include Log4r
-
-module Game::Core
-  
-  class Log
-  
-    @@log = Logger.new 'rubygame sandbox'
-    
-    def self.configure
-      self.add_console_out
-      self.add_file_out
-      @@log.level = DEBUG
-    end
-  
-    def self.debug(message)
-      @@log.debug message
-    end
-    
-    def self.info(message)
-      @@log.info message
-    end
-    
-    def self.error(message)
-      @@log.error message
-    end
-    
-    def self.warn(message)
-      @@log.warn message
-    end
-    
-    private
-    
-    def self.add_console_out
-      console_format = PatternFormatter.new(:pattern => "%l:\t %m")
-      @@log.add Log4r::StdoutOutputter.new('console', :formatter=>console_format)
-    end
-    
-    def self.add_file_out
-      file_format = PatternFormatter.new(:pattern => "[ %d ] %l\t %m")
-      log_file = File.dirname(__FILE__) + '/../game.log'
-      @@log.add FileOutputter.new('fileOutputter', :filename => log_file, :trunc => false, :formatter=>file_format)
-    end
-    
+module Game::Core  
+  class Log        
+    class << self                    
+      def debug(message)
+        logger.debug message
+      end
+      
+      def info(message)
+        logger.info message
+      end
+      
+      def error(message)
+        logger.error message
+      end
+      
+      def warn(message)
+        logger.warn message
+      end
+      
+      private
+      def logger        
+        @logger ||= create_logger
+      end
+      
+      def create_logger
+        logger = Log4r::Logger.new 'rubygame sandbox'
+        logger.add console_output
+        logger.add file_output
+        logger.level = Log4r::DEBUG   
+        logger     
+      end
+      
+      def console_output
+        console_format = Log4r::PatternFormatter.new(:pattern => "%l:\t %m")
+        Log4r::StdoutOutputter.new('console', :formatter => console_format)
+      end
+      
+      def file_output
+        file_format = Log4r::PatternFormatter.new(:pattern => "[ %d ] %l\t %m")
+        log_file = File.dirname(__FILE__) + '/../game.log'
+        Log4r::FileOutputter.new('fileOutputter', :filename => log_file, :trunc => false, :formatter=>file_format)
+      end  
+    end  
   end
-
 end 
 
  

@@ -1,4 +1,4 @@
-require "./game/core/game_object.rb"
+require "game/core/game_object"
 
 module Game::Core
 
