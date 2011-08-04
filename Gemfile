@@ -7,7 +7,7 @@ group :test do
   gem "mocha"
 end
 
-group :install do
+group :installer do
   gem "progressbar"
   gem "zip"
 end
