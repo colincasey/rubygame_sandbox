@@ -1,7 +1,4 @@
-require "test/unit"
-require "./game/core/sprite_sheet.rb"
-
-include Game::Core
+require 'test_helper'
 
 class SpriteSheetTest < Test::Unit::TestCase
 

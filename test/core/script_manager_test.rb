@@ -1,8 +1,4 @@
-require "test/unit"
-require "mocha"
-require "./game/core/script_manager.rb"
-
-include Game::Core
+require 'test_helper'
 
 class ScriptManagerTest < Test::Unit::TestCase
   

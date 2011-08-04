@@ -1,8 +1,4 @@
-require "test/unit"
-require "mocha"
-require "./game/core/collision_tree.rb"
-
-include Game::Core
+require 'test_helper'
 
 class CollisionTreeTest < Test::Unit::TestCase
 

@@ -1,8 +1,4 @@
-require "test/unit"
-require "mocha"
-require "./game/entities/fox.rb"
-
-include Game::Entites
+require 'test_helper'
 
 class FoxTest < Test::Unit::TestCase
 

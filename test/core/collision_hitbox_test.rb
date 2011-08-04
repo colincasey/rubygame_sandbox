@@ -1,11 +1,6 @@
-require "test/unit"
-require "mocha"
-require "./game/core/collision_hitbox.rb"
+require 'test_helper'
 
-include Game::Core
-
-class CollisionHitBoxTest < Test::Unit::TestCase
-
+class CollisionHitBoxTest < Test::Unit::TestCase  
   def test_initialize
     rect = mock
     hitbox = CollisionHitbox.new rect
