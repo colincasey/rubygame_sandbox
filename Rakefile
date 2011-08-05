@@ -18,7 +18,7 @@ end
 namespace :dependencies do
   desc "install dependencies"
   task :install do
-    puts 
+    puts "Installing required gems and SDL libraries\n"
     system 'bundle install'
     puts 
     system 'ruby install.rb'
